@@ -19,7 +19,7 @@ export default class MyPlugin extends Plugin {
 		// This creates an icon in the left ribbon.
 		const ribbonIconEl = this.addRibbonIcon('dice', 'My New Test Plugin', (evt: MouseEvent) => {
 			// Called when the user clicks the icon.
-			new Notice('Doot doot doot');
+			new Notice(this.settings.mySetting);
 		});
 		// Perform additional things with the ribbon
 		ribbonIconEl.addClass('my-plugin-ribbon-class');
@@ -98,7 +98,7 @@ class SampleModal extends Modal {
 
 	onOpen() {
 		const {contentEl} = this;
-		contentEl.setText('Woah!');
+		contentEl.setText('What is the plan for this pomodoro session?');
 	}
 
 	onClose() {
